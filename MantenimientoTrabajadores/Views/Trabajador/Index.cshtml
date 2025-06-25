@@ -1,0 +1,38 @@
+﻿@model List<Trabajadores>
+
+<h1>Trabajador</h1>
+<p>
+    <a asp-action="Create">Crear</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Tipo de Documento</td>
+            <td>Nro de Documento</td>
+            <td>Sexo</td>
+            <td>Departamento</td>
+            <td>Provincia</td>
+            <td>Distrito</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var trabajador in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => trabajador.Nombres)</td>
+                <td>@Html.DisplayFor(m => trabajador.TipoDocumento)</td>
+                <td>@Html.DisplayFor(m => trabajador.NumeroDocumento )</td>
+                <td>@Html.DisplayFor(m => trabajador.Sexo)</td>
+                <td>@Html.DisplayFor(m => trabajador.IdDepartamento)</td>
+                <td>@Html.DisplayFor(m => trabajador.IdProvincia)</td>
+                <td>@Html.DisplayFor(m => trabajador.IdDistrito)</td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controller="Trabajador" asp-action="Edit" asp-route-id="@trabajador.Id">Editar</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Trabajador" asp-action="Delete" asp-route-id="@trabajador.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
