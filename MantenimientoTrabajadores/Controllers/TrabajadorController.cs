@@ -16,8 +16,8 @@ namespace MantenimientoTrabajadores.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var trabajadores = _context.Trabajadores.Include(d => d.IdDepartamentoNavigation);
-            return View(await _context.Trabajadores.ToListAsync());
+            var trabajadores = _context.Trabajadores.Include(d => d.IdDepartamentoNavigation).Include(d=> d.IdProvinciaNavigation).Include(d=>d.IdDistritoNavigation);
+            return View(await trabajadores.ToListAsync());
         }
 
         public IActionResult Create()
