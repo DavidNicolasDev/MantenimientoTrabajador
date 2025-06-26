@@ -17,7 +17,12 @@
 
             <div class="form-group">
                 <label asp-for="TipoDocumento" class="control-label"></label>
-                <input asp-for="TipoDocumento" class="form-control" />
+                <select asp-for="TipoDocumento" class="form-select" aria-label="Default select example">
+                    <option value="DNI">DNI</option>
+                    <option value="CE">Carnet de extrangeria</option>
+                    <option value="LM">Libreta Militar</option>
+                    <option value="Bol">Boleta Militar</option>
+                </select>
                 <span asp-validation-for="TipoDocumento" class="text-danger"></span>
             </div>
 
@@ -29,7 +34,16 @@
 
             <div class="form-group">
                 <label asp-for="Sexo" class="control-label"></label>
-                <input asp-for="Sexo" class="form-control" />
+                <div class="my-3">
+                    <div class="form-check">
+                        <input  asp-for="Sexo" type="radio" class="form-check-input" value="F" checked required />
+                        <label class="form-check-label">F</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Sexo" type="radio" class="form-check-input" value="M" checked required />
+                        <label class="form-check-label">M</label>
+                    </div>
+                </div>
                 <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
 
