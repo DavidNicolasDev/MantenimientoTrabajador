@@ -17,7 +17,12 @@
 
             <div class="form-group">
                 <label asp-for="TipoDocumento" class="control-label"></label>
-                <input asp-for="TipoDocumento" class="form-control" />
+                <select asp-for="TipoDocumento" class="form-select" aria-label="Default select example">
+                    <option value="DNI">DNI</option>
+                    <option value="CE">Carnet de extrangeria</option>
+                    <option value="LM">Libreta Militar</option>
+                    <option value="Bol">Boleta Militar</option>
+                </select>
                 <span asp-validation-for="TipoDocumento" class="text-danger"></span>
             </div>
 
